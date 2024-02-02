@@ -4,3 +4,10 @@ curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer {your
 curl -X POST -H "Content-Type: application/json" -u <username>:<password> \
 -d '{"title": "Your pull request title", "source": {"branch": {"name": "<new-branch-name>"}}, "destination": {"branch": {"name": "master"}}}' \
 https://api.bitbucket.org/2.0/repositories/<username>/<repository_slug>/pullrequests
+
+
+next 
+curl -X POST -H "Content-Type: application/json" -u <username>:<app_password> \
+-d '{"title": "Your pull request title", "description": "Your pull request description", "fromRef": {"id": "your_source_branch_name"}, "toRef": {"id": "your_destination_branch_name"}}' \
+https://api.bitbucket.org/2.0/repositories/<username>/<repository_slug>/pullrequests
+
